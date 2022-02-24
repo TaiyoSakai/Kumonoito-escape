@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蜘蛛の糸 : 脱出ゲーム │ Project N</title>
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <svg width="0" height="0" class="hidden">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.47 24.94" id="arrow" class="arrow_svg">
+      <title>arrow</title>
+      <polygon points="0 24.94 0 19.66 7.35 12.47 0 5.92 0 0 12.47 12.47 0 24.94"/>
+    </symbol>
+  </svg>
+  <header class="header">
+    <div class="container">
+      <div class="header__logo"><img src="assets/images/logo.png" alt="チームロゴ"></div>
+      <div class="header__name">N・S高生制作サイト</div>
+    </div>
+  </header>
+  <main class="main main-page">
+    <!-- タイトルエリア　ここから -->
+    <h1 class="main-title"><img src="assets/images/header.png" alt="封鎖された家庭科室からの脱出"></h1>
+    <!-- タイトルエリア　ここまで -->
+    <div>
+      <!-- STAGE1　ここから -->
+      <div id="sectionStage1" class="stage">
+
+        <!-- STAGE1問題セクション　ここから -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：0</span></h2>
+          </div>
+          <div class="container">
+            <div class="box bg-color--gray">
+              <p class="bunsyou">ある日の事でございます。犍陀多<b class="normal">（かんだた）</b>という男が悪事を働いた帰りに深い森を急ぎ歩いていると小さな蜘蛛が一匹道端を這っていくのが見えました。<br>
+                「ああ寒い寒い。どうしてこんな日に限って雪など降っているんだ。ん？蜘蛛か。」<br>
+                そこで犍陀多はいつものように足を上げ、、、<br>
+                <br>
+                選択してください。
+                <ol>
+                  <li>「いつも家に蜘蛛の巣なんぞはりやがって。その恨みだ。」といい踏みつぶし、その場を去りました。</li>
+                  <li>こんななりをしていても小さな命だ。踏み殺さないでやろうと思いなおし、その場を去りました。</li>
+                </ol>
+              </p>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <div class="container">
+            <figure class="image__container paddingU">
+              <img src="assets/images/choice1.png" alt="">
+            </figure>
+          </div>
+        </section>
+        <!-- STAGE1問題セクション　ここまで -->
+        <section class="section bg-color--keycolor">
+          <section class="section">
+            <div class="container">
+              <div id="option">
+                <a class="btn" @click="buttona">踏みつぶして進む<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <div>
+                  <section v-if="choice1==='B'"  v-bind:class="{isClear:choice1==='B'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">犍陀多は蜘蛛を踏みつぶしていきました、、、</div>
+                        <div class="clear-message__content">犍陀多はいつものように足を上げ、「いつも家に蜘蛛の巣なんぞはりやがって。その恨みだ。」と云い踏みつぶし、その場を去りました。</div>
+                        <a class="clear-message__btn btn-mainpage" href="end1.html">○○年後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <a class="btn" @click="buttonb">よけて進む<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <div>
+                  <section v-show="choice2 === 'B'"  v-bind:class="{isClear:choice2 === 'B'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">犍陀多は蜘蛛を見逃してやりました、、、</div>
+                        <div class="clear-message__content">そこで犍陀多はいつものように足を上げ踏み殺そうとしましたが、<br>
+                          「いや、いや、これも小さいながら、命のあるものに違いない。その命を無暗<b class="normal">(むやみ)</b>にとると云う事は、いくら何でも可哀そうだ。」
+                          と、こう急に思い返して、とうとうその蜘蛛を殺さずに助けてやりました。
+                        </div>
+                        <a class="clear-message__btn btn-mainpage" href="main2.html">○○年後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+
+      <!-- STAGE1　ここまで -->
+  </main>
+  <footer class="footer section bg-color--gray">
+    <div class="container">
+        <p class="text-center">授業主催： N・S高<br>協力：株式会社SCRAP<br>企画制作：N・S高生</p>
+        <p class="text-center">「リアル脱出ゲーム」は株式会社SCRAPの登録商標です。</p>
+        <p class="text-center">株式会社SCRAPとN・S高で実施した授業「リアル脱出ゲームの作り方」の一環で<br>
+          生徒が制作したものであり、SCRAPが主催/公認するものではありません。</p>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

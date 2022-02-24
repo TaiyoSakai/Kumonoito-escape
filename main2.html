@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蜘蛛の糸 : 脱出ゲーム │ Project N</title>
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/vue.js"></script>
+</head>
+<body>
+  <svg width="0" height="0" class="hidden">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.47 24.94" id="arrow" class="arrow_svg">
+      <title>arrow</title>
+      <polygon points="0 24.94 0 19.66 7.35 12.47 0 5.92 0 0 12.47 12.47 0 24.94"/>
+    </symbol>
+  </svg>
+  <header class="header">
+    <div class="container">
+      <div class="header__logo"><img src="assets/images/logo.png" alt="チームロゴ"></div>
+      <div class="header__name">N・S高生制作サイト</div>
+    </div>
+  </header>
+  <main class="main main-page">
+    <!-- タイトルエリア　ここから -->
+    <h1 class="main-title"><img src="assets/images/header.png" alt="封鎖された家庭科室からの脱出"></h1>
+    <!-- タイトルエリア　ここまで -->
+    <div id="stage">
+
+      <!-- STAGE1　ここから -->
+      <div id="sectionStage1" class="stage">
+
+        <!-- STAGE1問題セクション　ここから -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：1</span></h2>
+          </div>
+          <div class="container">
+            <div class="box bg-color--gray">
+              <p class="bunsyou">○○年後、、、<br>
+                <span class="danraku"></span>犍陀多は生前の悪事によって地獄の底の血の池でほかの罪人と一緒に、まるで死にかかった蛙のようにただただもがいていました。<br>
+                <span class="danraku"></span>ところがある時の事でございます。何気なく犍陀多が頭を上げて血の池の空を眺めますと、そのひっそりとした暗闇の中を遠い遠い天井から銀色の蜘蛛の糸が、まるで人目にかかるのを恐れるように、一すじ細く光りながら、するすると自分の上へ垂れて参るのではございませんか。<br>
+                <span class="danraku"></span>犍陀多はこの糸に縋り付いてどこまでも登っていけば、きっと地獄から抜け出せるに違いないと思い早速その蜘蛛の糸をつかって上へ登る事にしました。元より大泥坊の事でございますから、こう云う事には昔から慣れ切っているのでございます。しかし、そう簡単に地獄から出ることはできませんでした。蜘蛛の糸はあまりにも細く、髪の毛ほどの太さもないほどでした。<br>
+                <span class="danraku"></span>犍陀多が困り果て、血の池で絶望していると「犍陀多、犍陀多よ」と自分を呼ぶ声が聞こえます。最初はうっすらとでしたが、だんだんはっきりと聞こえてくるようになりました。あたりを見回してもここは地獄の底ですから誰も見当たりません。犍陀多が「だれだ？」と聞き返すと、その声は「そなたは生前に一匹の蜘蛛を助けてやったであろう。その蜘蛛が恩返しがしたいといってきたものだから、特別に機会をやることにした。」と言ってきました。<br>
+                <span class="danraku"></span>犍陀多が「機会だと？ふざけるな！こんな細い糸では登ろうにも上れないではないか！」と怒り叫ぶと、その声は「そう急くでない。その蜘蛛は面白い蜘蛛でな。名を<b class="strongred">”ナゾトキ蜘蛛”</b>と言う。こやつの出した問題を解いて喜ばせると糸が太く強くなるのだ。」と返してきます。<br>
+                <span class="danraku"></span>少し経つと、上からまた何か、今度は木の板のようなものが先についた糸が降りてきました。<br>
+                <span class="danraku"></span>犍陀多はそれを見て、「物は試しだ。少しでもここから出ることができる光が見えるのであらば試してみよう」といい、この木の板についた問題を解いてみることにしました。
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <figure class="image__container paddingU">
+              <img src="assets/images/Q1.png" alt="">
+            </figure>
+          </div>
+        </section>
+        <!-- STAGE1問題セクション　ここまで -->
+
+        <!-- STAGE1解答入力セクション　ここから -->
+        <section class="section bg-color--keycolor">
+          <div class="container">
+            <h2 class="section-title"><span class="section-title__stage">STAGE：1</span>数字と単位を答えてね。</h2>
+            <!------------------------------------------------------------------------------------------------------------
+              解答入力欄のコンポーネントです。入力欄・送信ボタン・エラーメッセージを表示します。
+              v-bind:correct="correctAnswer['stage1']['q1']" は正解の解答を指します。
+              v-on:answer-input="answerInput($event, 'stage1', 1)" は送信ボタンをクリックした時の動作を決める関数です。
+              2番目、3番目の1引数 'stage1', 1 はstage1の1問目ということになります。
+              1番麺の引数 $event は正解、不正解の判定を受け取る変数です。
+              []、()の間違い、''の抜けがあると動きません。
+            ------------------------------------------------------------------------------------------------------------>
+            <answer-input v-bind:correct="correctAnswer['stage1']['q1']" v-on:answer-input="answerInput($event, 'stage1', 1)"></answer-input>
+            <a class="link-hint" href="hint1.html" target="hint1">ヒントをみる ></a>
+            
+          </div>
+        </section>
+        <!-- STAGE1解答入力セクション　ここまで -->
+
+        <!-- STAGE1クリア画面　ここから -->
+        <!------------------------------------------------------------------------------------------------------
+          ステージを全問正解するとclear['stage1']がtrusになります。
+          v-if="clear['stage1']"はclear['stage1']がtrueになったら表示します。
+          v-bind:class="{isClear:clear['stage1']}"はclear['stage1']がtrueになったら「isClear」クラスを追加します。
+        -------------------------------------------------------------------------------------------------------->
+        <section v-if="clear['stage1']" v-bind:class="{isClear:clear['stage1']}"  class="section section--clear bg-color--gray">
+          <div class="container">
+            <div class="clear-message">
+              <div class="clear-message__title">正解！</div>
+              <div class="clear-message__content">犍陀多は見事に問題を解き、「わかったぞ！答えは”180本”だ！」と天へ向かって叫びました。<br>
+                すると、みるみるうちに髪の毛ほどもなかった蜘蛛の糸が米粒ほどの太さになりました。犍陀多ほどの大泥坊であればこの糸を登ることは容易でしょう。
+                犍陀多は地獄からの脱出を目指し、蜘蛛の糸を登り始めました。
+                </div>
+              <button v-on:click="nextStage('stage1')" onclick="location.href='#sectionStage2'" class="clear-message__btn btn-mainpage">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
+            </div>
+          </div>
+        </section>
+        <!-- STAGE1クリア画面　ここまで -->
+
+      </div>
+      <!-- STAGE1　ここまで -->
+
+      <!-- STAGE2　ここから -->
+      <!---------------------------------------------------------------------
+        クリア画面の「次のステージへ」ボタンをクリックしたら表示します。
+        v-if="next['stage1']"はnext['stage1']がtrueになったら表示します。
+      ----------------------------------------------------------------------->
+      <div v-if="next['stage1']" id="sectionStage2" class="stage">
+        <section>
+          <div class="section">
+            <div class="container">
+              <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：2</span></h2>
+            </div>
+            <div class="container">
+              <div class="box bg-color--gray">
+                <p class="bunsyou">ややしばらく登るうちに、犍陀多は地獄の底にいた時には見ることがなかった雨が降ってまいりました。<br>
+                  <span class="danraku"></span>「太くなったといえども所詮は米粒。この雨で手を滑らせて落ちてしまうかもしれない。」そう思いどうしようかと悩みながら一休みしておりますと、また上から木の板のようなものが先についた蜘蛛の糸が降りてきました。<br>
+                  <span class="danraku"></span>犍陀多は、また糸が太くなるという望みにかけてこの問題を解くことにしました。
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <figure class="image__container paddingU">
+              <img src="assets/images/Q2.png" alt="">
+            </figure>
+          </div>
+        </section>
+        <!-- STAGE2解答入力セクション　ここから -->
+        <section class="section bg-color--keycolor">
+          <div class="container">
+            <h2 class="section-title"><span class="section-title__stage">STAGE：2</span>「？」に入る言葉は？</h2>
+            <!------------------------------------------------------------------------------------------------------------
+              解答入力欄のコンポーネントです。入力欄・送信ボタン・エラーメッセージを表示します。
+              v-bind:correct="correctAnswer['stage1']['q1']" は正解の解答を指します。
+              v-on:answer-input="answerInput($event, 'stage1', 1)" は送信ボタンをクリックした時の動作を決める関数です。
+              2番目、3番目の1引数 'stage1', 1 はstage1の1問目ということになります。
+              1番麺の引数 $event は正解、不正解の判定を受け取る変数です。
+              []、()の間違い、''の抜けがあると動きません。
+            ------------------------------------------------------------------------------------------------------------>
+            <answer-input v-bind:correct="correctAnswer['stage2']['q1']" v-on:answer-input="answerInput($event, 'stage2', 1)"></answer-input>
+            <a class="link-hint" href="hint2.html" target="hint2">ヒントをみる ></a>
+            
+          </div>
+        </section>
+        <!-- STAGE2解答入力セクション　ここまで -->
+
+        <!-- STAGE2クリア画面　ここから -->
+        <section v-if="clear['stage2']" v-bind:class="{isClear:clear['stage2']}"  class="section section--clear bg-color--gray">
+          <div class="container">
+            <div class="clear-message">
+              <div class="clear-message__title">正解！</div>
+              <div class="clear-message__content">犍陀多はこれまた見事に問題を解き、「わかったぞ！答えは”赤い鳥”だ！」と天へ向かって叫びました。<br>
+                すると、みるみるうちに米粒ほどだった蜘蛛の糸は犍陀多の人差し指ほどの、2㎝程度にまで太くなりました。犍陀多は大いに喜び、また登り始めました。
+              </div>
+                <button v-on:click="nextStage('stage2')" onclick="location.href='#sectionStage3'" class="clear-message__btn btn-mainpage">次のステージへ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></button>
+            </div>
+          </div>
+        </section>
+        <!-- STAGE2クリア画面　ここまで -->
+      </div>
+      <!-- STAGE2　ここまで -->
+
+      <!-- STAGE3　ここから -->
+      <div v-if="next['stage2']" id="sectionStage3" class="stage">
+
+        <!-- STAGE3-1問題セクション　ここから -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">STAGE：3</span></h2>
+          </div>
+          <div class="container">
+            <div class="box bg-color--gray">
+              <p class="bunsyou">またしばらく登っていると、今度は体が凍ってしまうほどに吹雪いている場所に入りました。<br>
+                <span class="danraku"></span>さすがの犍陀多でも、手がかじかんでしまっては2㎝程度の太さでは登れません。犍陀多が気力を振り絞って登っていると、また上から木の板のようなものが先についた蜘蛛の糸が降りてきました。<br>
+                <span class="danraku"></span>この寒さと震えで手を放してしまうかもしれないと絶望しかけていた犍陀多ですが、少しづつでも登りながら、この問題を解くことにしました。
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <figure class="image__container paddingU">
+              <img src="assets/images/Q3.png" alt="">
+            </figure>
+          </div>
+        </section>
+
+        <!-- STAGE3-1問題セクション　ここまで -->
+
+        <!-- STAGE3-1解答入力セクションここから -->
+        <section class="section bg-color--keycolor">
+          <div class="container">
+            <h2 class="section-title"><span class="section-title__stage">STAGE：3</span>友人総代として弔辞を読んだのは誰？</h2>
+            <!-----------------------------------------------------------------------------------------------------------------
+              解答入力欄のコンポーネントです。
+              v-on:answer-input="answerInput($event, 'stage3', 1, 'final')" は送信ボタンをクリックした時の動作を決める関数です。
+              4番目の引数 'final' は最終ステージを表します。
+            ------------------------------------------------------------------------------------------------------------------>
+            <answer-input v-bind:correct="correctAnswer['stage3']['q1']" v-on:answer-input="answerInput($event, 'stage3', 1, 'final')"></answer-input>
+            <a class="link-hint" href="hint3.html" target="hint3">ヒントをみる ></a>
+          </div>
+        </section>
+        <!-- STAGE3-1解答入力セクション　ここまで -->
+
+        <section v-if="clear['stage3']" v-bind:class="{isClear:clear['stage3']}"  class="section section--clear bg-color--gray">
+          <div class="container">
+            <div class="clear-message">
+              <div class="clear-message__title">正解！</div>
+              <div class="clear-message__content">犍陀多は問題を解き「答えは”菊池寛”だ、、、」と震えた声で言うと先ほどまでは2㎝程の太さだった蜘蛛の糸が犍陀多がいつも使っていたロープと同じ5㎝ほどにまで太くなりました。<br>
+                更に、かすかに蜘蛛の糸からぬくもりを感じます。犍陀多は「ああ、人(蜘蛛)からの思いやりとはこんなにも人を温かくするのか。」と笑みをこぼして、吹雪の中をまた登り始めました。
+              </div>
+                <a class="clear-message__btn btn-mainpage" href="main3.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- STAGE3　ここまで -->
+
+    </div>
+  </main>
+  <footer class="footer section bg-color--gray">
+    <div class="container">
+        <p class="text-center">授業主催： N・S高<br>協力：株式会社SCRAP<br>企画制作：N・S高生</p>
+        <p class="text-center">「リアル脱出ゲーム」は株式会社SCRAPの登録商標です。</p>
+        <p class="text-center">株式会社SCRAPとN・S高で実施した授業「リアル脱出ゲームの作り方」の一環で<br>
+          生徒が制作したものであり、SCRAPが主催/公認するものではありません。</p>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

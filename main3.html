@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>蜘蛛の糸 : 脱出ゲーム │ Project N</title>
+  <link rel="stylesheet" href="assets/css/normalize.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <svg width="0" height="0" class="hidden">
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12.47 24.94" id="arrow" class="arrow_svg">
+      <title>arrow</title>
+      <polygon points="0 24.94 0 19.66 7.35 12.47 0 5.92 0 0 12.47 12.47 0 24.94"/>
+    </symbol>
+  </svg>
+  <header class="header">
+    <div class="container">
+      <div class="header__logo"><img src="assets/images/logo.png" alt="チームロゴ"></div>
+      <div class="header__name">N・S高生制作サイト</div>
+    </div>
+  </header>
+  <main class="main main-page">
+    <!-- タイトルエリア　ここから -->
+    <h1 class="main-title"><img src="assets/images/header.png" alt="封鎖された家庭科室からの脱出"></h1>
+    <!-- タイトルエリア　ここまで -->
+      <!-- STAGE1　ここから -->
+      <div id="sectionStage1" class="stage">
+
+        <!-- STAGE1問題セクション　ここから -->
+        <section class="section">
+          <div class="container">
+            <h2 class="section-title section-title--keycolorlight"><span class="section-title__stage">FINAL STAGE</span></h2>
+          </div>
+          <div class="container">
+            <div class="box bg-color--gray">
+              <p class="bunsyou">登り始めてからどれほどの時間がたったのでしょう。何分、何時間、あるいは何日かもしれません。犍陀多はそれほどの時間をかけて、一生懸命に登り続けておりました。<br>
+                <span class="danraku"></span>今では強い風も吹雪も収まってあたりはしんと静まり返っています。<br>
+                <span class="danraku"></span>風も雪にも負けず、何分、何時間、あるいは何日も登り続けてきた犍陀多も、とうとう疲れ果て、もう一たぐりも上の方へはのぼれなくなってしまいました。そこで仕方なく、まず一休みするつもりで糸の中途にぶら下りながら、体力の回復を待つことにしました。ふと上を見上げると分厚い雲の中から暖かな光が漏れ出しております。極楽が近づいてきているのでしょう。また、下を見下ろすと自分がいた血の池は今ではもう暗闇の底にいつの間にかかくれております。<br>
+                <span class="danraku"></span>ところが、気が付きますと蜘蛛の糸の下の方には、数かぎりもない罪人たちが、自分ののぼった後をつけて、まるで蟻の行列のように、やはり上へ上へ一心によじのぼって来るではございませんか。犍陀多はこれを見ると、あの池の中にあんなにも人がいたのかという驚きや恐怖でしばらくはただ莫迦のように大きな口を開いたまま、眼ばかり動かしておりました。太くなったといえども所詮は5㎝。あんなにも多くの人間の体重が一度にかかってもし万一途中で切れたらせっかくここまで登ってきた肝心の自分までも元の地獄へ落ちてしまわなければなりません。そんなことがあったら、大変でございます。<br>
+                <span class="danraku"></span>が、そう云う中にも罪人たちは何百、何千となくはるか下の真っ暗な地獄の底からうようよと這いあがって、きらきらと光っている蜘蛛の糸を一列になりながらせっせと上ってまいります。<br>
+                <span class="danraku"></span>今どうにかしなければ、糸は二つに切れて、落ちてしまうに違いありません。<br>
+                <br>
+                選択してください。
+                <ol>
+                  <li>そこで犍陀多は、大きな声を出して、<br>「こら、罪人ども。この蜘蛛の糸はおれのものだぞ。お前たちは一体誰にきいて、のぼって来た。下りろ。下りろ。」と叫びました。</li>
+                  <li>そこで犍陀多は、地獄まで持ってきた愛用の小刀を取り出し、自身の足先で蜘蛛の糸を断ち切りました。</li>
+                  <li>ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</li>
+                </ol>
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <figure class="image__container paddingU">
+              <img src="assets/images/choice2.png" alt="">
+            </figure>
+          </div>
+        </section>
+        <!-- STAGE1問題セクション　ここまで -->
+        <section class="section bg-color--keycolor">
+          <section class="section">
+            <div class="container">
+              <div id="option">
+                <a class="btn" @click="buttonshout">下に向かって叫ぶ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <div>
+                  <section v-if="shout==='B'"  v-bind:class="{isClear:shout==='B'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは下に向かって叫んだ。</div>
+                        <div class="clear-message__content">そこで犍陀多は、大きな声を出して、「こら、罪人ども。この蜘蛛の糸はおれのものだぞ。お前たちは一体誰にきいて、のぼって来た。下りろ。下りろ。」と叫びました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end2.html">すると、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <a class="btn" @click="buttoncut">足先で糸を切る<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <div>
+                  <section v-if="cut==='B'"  v-bind:class="{isClear:cut==='B'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは足元で糸を切った。</div>
+                        <div class="clear-message__contentCenter">そこで犍陀多は、地獄まで持ってきた愛用の小刀を取り出し、自身の足先で蜘蛛の糸を断ち切りました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end3.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+              <div id="foption3">
+                <a class="btn" @click="buttonwait">気にせず登る<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <div>
+                  <section v-if="wait==='C'"  v-bind:class="{isClear:wait==='C'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
+                        <div class="clear-message__contentCenter">ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end5.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                  <section v-if="wait==='B'"  v-bind:class="{isClear:wait==='B'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
+                        <div class="clear-message__contentCenter">ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end4.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
+            </div>
+          </section>
+        </section>
+      </div>
+      <!-- STAGE1　ここまで -->
+  </main>
+  <footer class="footer section bg-color--gray">
+    <div class="container">
+        <p class="text-center">授業主催： N・S高<br>協力：株式会社SCRAP<br>企画制作：N・S高生</p>
+        <p class="text-center">「リアル脱出ゲーム」は株式会社SCRAPの登録商標です。</p>
+        <p class="text-center">株式会社SCRAPとN・S高で実施した授業「リアル脱出ゲームの作り方」の一環で<br>
+          生徒が制作したものであり、SCRAPが主催/公認するものではありません。</p>
+    </div>
+  </footer>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
