@@ -43,16 +43,20 @@ jo.mount('#option')
 const fo3 = Vue.createApp({
   data(){
     return{
-      wait:'A',
+      hurry:'A',
+      carefully:'A',
       info:{}
     }
   },
   methods: {
-    buttonwait: function () {
-      if(info>0){
-        return this.wait='B'
+    buttonhurry: function () {
+      return this.hurry='B'
+    },
+    buttoncarefully: function () {
+      if(info>1){
+        return this.carefully='B'
       }else{
-        return this.wait='C'
+        return this.carefully='C'
       }
     },
     buttonnext: function(){
