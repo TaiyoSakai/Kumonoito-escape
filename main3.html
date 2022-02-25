@@ -45,7 +45,8 @@
                 <br>
                 選択してください。
                 <ol>
-                  <li>ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</li>
+                  <li>そこで犍陀多は、糸に負荷がかかったとしても糸が切れる前に上り切ればいいと考え、急いでできる限り早く登ることにしました。</li>
+                  <li>そこで犍陀多は、時間をかけすぎると糸が切れてしまうかもしれないと考えつつも、糸に負荷がかかって切れないようにゆっくりと慎重に上ることにしました。</li>
                   <li>そこで犍陀多は、大きな声を出して、<br>「こら、罪人ども。この蜘蛛の糸はおれのものだぞ。お前たちは一体誰にきいて、のぼって来た。下りろ。下りろ。」と叫びました。</li>
                   <li>そこで犍陀多は、地獄まで持ってきた愛用の小刀を取り出し、自身の足先で蜘蛛の糸を断ち切りました。</li>
                 </ol>
@@ -65,9 +66,9 @@
           <section class="section">
             <div class="container">
               <div id="foption3">
-                <a class="btn" @click="buttonwait">気にせず登る<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <a class="btn" @click="buttonhurry">急いで登る<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
                 <div>
-                  <section v-if="wait==='C'"  v-bind:class="{isClear:wait==='C'}" class="section section--clear bg-color--gray">
+                  <!-- <section v-if="hurry==='C'"  v-bind:class="{isClear:hurry==='C'}" class="section section--clear bg-color--gray">
                     <div class="container">
                       <div class="clear-message">
                         <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
@@ -75,13 +76,34 @@
                         <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end5.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
                       </div>
                     </div>
-                  </section>
-                  <section v-if="wait==='B'"  v-bind:class="{isClear:wait==='B'}" class="section section--clear bg-color--gray">
+                  </section> -->
+                  <section v-if="hurry==='B'"  v-bind:class="{isClear:hurry==='B'}" class="section section--clear bg-color--gray">
                     <div class="container">
                       <div class="clear-message">
-                        <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
-                        <div class="clear-message__contentCenter">ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</div>
+                        <div class="clear-message__title">あなたは急いで登ることにしました。</div>
+                        <div class="clear-message__contentCenter">そこで犍陀多は、糸に負荷がかかったとしても糸が切れる前に上り切ればいいと考え、急いでできる限り早く登ることにしました。</div>
                         <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end4.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+                <a class="btn" @click="buttoncarefully">慎重に登る<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <div>
+                  <section v-if="carefully==='B'"  v-bind:class="{isClear:carefully==='B'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは慎重に登ることにしました。</div>
+                        <div class="clear-message__content">そこで犍陀多は、時間をかけすぎると糸が切れてしまうかもしれないと考えつつも、糸に負荷がかかって切れないようにゆっくりと慎重に上ることにしました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end4.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                  <section v-if="carefully==='C'"  v-bind:class="{isClear:carefully==='C'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは慎重に上ることにしました。</div>
+                        <div class="clear-message__content">そこで犍陀多は、時間をかけすぎると糸が切れてしまうかもしれないと考えつつも、糸に負荷がかかって切れないようにゆっくりと慎重に上ることにしました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end5.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
                       </div>
                     </div>
                   </section>
@@ -113,6 +135,7 @@
                   </section>
                 </div>
               </div>
+              
             </div>
           </section>
         </section>
