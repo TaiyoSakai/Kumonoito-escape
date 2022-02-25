@@ -49,7 +49,7 @@ const fo3 = Vue.createApp({
   },
   methods: {
     buttonwait: function () {
-      if(info>1){
+      if(info>0){
         return this.wait='B'
       }else{
         return this.wait='C'
