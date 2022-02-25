@@ -45,9 +45,9 @@
                 <br>
                 選択してください。
                 <ol>
+                  <li>ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</li>
                   <li>そこで犍陀多は、大きな声を出して、<br>「こら、罪人ども。この蜘蛛の糸はおれのものだぞ。お前たちは一体誰にきいて、のぼって来た。下りろ。下りろ。」と叫びました。</li>
                   <li>そこで犍陀多は、地獄まで持ってきた愛用の小刀を取り出し、自身の足先で蜘蛛の糸を断ち切りました。</li>
-                  <li>ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</li>
                 </ol>
               </p>
             </div>
@@ -64,6 +64,29 @@
         <section class="section bg-color--keycolor">
           <section class="section">
             <div class="container">
+              <div id="foption3">
+                <a class="btn" @click="buttonwait">気にせず登る<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                <div>
+                  <section v-if="wait==='C'"  v-bind:class="{isClear:wait==='C'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
+                        <div class="clear-message__contentCenter">ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end5.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                  <section v-if="wait==='B'"  v-bind:class="{isClear:wait==='B'}" class="section section--clear bg-color--gray">
+                    <div class="container">
+                      <div class="clear-message">
+                        <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
+                        <div class="clear-message__contentCenter">ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</div>
+                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end4.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </div>
               <div id="option">
                 <a class="btn" @click="buttonshout">下に向かって叫ぶ<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
                 <div>
@@ -85,29 +108,6 @@
                         <div class="clear-message__title">あなたは足元で糸を切った。</div>
                         <div class="clear-message__contentCenter">そこで犍陀多は、地獄まで持ってきた愛用の小刀を取り出し、自身の足先で蜘蛛の糸を断ち切りました。</div>
                         <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end3.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
-                      </div>
-                    </div>
-                  </section>
-                </div>
-              </div>
-              <div id="foption3">
-                <a class="btn" @click="buttonwait">気にせず登る<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
-                <div>
-                  <section v-if="wait==='C'"  v-bind:class="{isClear:wait==='C'}" class="section section--clear bg-color--gray">
-                    <div class="container">
-                      <div class="clear-message">
-                        <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
-                        <div class="clear-message__contentCenter">ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</div>
-                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end5.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
-                      </div>
-                    </div>
-                  </section>
-                  <section v-if="wait==='B'"  v-bind:class="{isClear:wait==='B'}" class="section section--clear bg-color--gray">
-                    <div class="container">
-                      <div class="clear-message">
-                        <div class="clear-message__title">あなたは下を気にすることなく上に登ることにした。</div>
-                        <div class="clear-message__contentCenter">ですが犍陀多は、この太さ5㎝の蜘蛛の糸を信じ、下は気にせずにただ淡々と登ることにしました。</div>
-                        <a class="clear-message__btn btn-mainpage" @click="buttonnext" href="end4.html">その後、、、<svg class="btn__arrow"><use xlink:href="#arrow"></use></svg></a>
                       </div>
                     </div>
                   </section>
