@@ -293,11 +293,21 @@ button {
   position: relative;
   font-size: 30px;
   text-align: center;
-  line-height: 1.06667;
+  line-height: 1.4;
   margin: 0;
   padding-bottom: 15px;
   color: #701919;
 }
+.section-title--border--final-1-2 {
+  position: relative;
+  font-size: 28px;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  padding-bottom: 15px;
+  color: #701919;
+}
+
 
 /******************
 * text
