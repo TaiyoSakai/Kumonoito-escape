@@ -53,7 +53,7 @@ const fo3 = Vue.createApp({
       return this.hurry='B'
     },
     buttoncarefully: function () {
-      if(info>1){
+      if(info>0){
         return this.carefully='B'
       }else{
         return this.carefully='C'
